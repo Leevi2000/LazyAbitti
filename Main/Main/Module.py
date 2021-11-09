@@ -2,9 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import sys
-   
+import webbrowser
+
 def GetNewest(): #Returns newest abitti version
-        headeria= {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.61'    }
+        headeria= {'User-Agent': 'Mozilla/5.0'}
         page = requests.get("https://www.abitti.fi/fi/paivitykset/", headers=headeria)
         soup = BeautifulSoup(page.content, "html.parser")
         results = soup.find("section", class_="details")
@@ -14,7 +15,7 @@ def GetNewest(): #Returns newest abitti version
        
         return newestVer
 
-def CurrentVer():
+def CurrentVer(): #Reads text file about last downloaded version
 
     path_to_script = sys.argv[0]
     path_to_script_dir = os.path.dirname(os.path.abspath(path_to_script))
@@ -30,13 +31,19 @@ def CurrentVer():
         file.close()
         return "txt file empty"
 
-def WriteNewVersion(versionName):
+def WriteNewVersion(versionName): #Inserts the new downloaded version name to text file
+
      path_to_script = sys.argv[0]
      path_to_script_dir = os.path.dirname(os.path.abspath(path_to_script))
 
      file = open(os.path.join(path_to_script_dir, "version.txt"), "w")
      file.write(versionName)
      file.close()
+
+def GoToWebsite(websiteURL): #Opens URL on your windows-pc default browser
+    
+    webbrowser.get('windows-default').open(websiteURL, new=2)
+    
 
 
 
