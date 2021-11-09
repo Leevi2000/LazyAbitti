@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>17e234d8-a93b-45da-a7e6-2417ebbb078d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>AbittiAutoInstaller.py</StartupFile>
+    <StartupFile>AbittiAutoDownloader.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AbittiAutoInstaller.py" />
+    <Compile Include="AbittiAutoDownloader.py" />
     <Compile Include="Module.py">
       <SubType>Code</SubType>
     </Compile>
