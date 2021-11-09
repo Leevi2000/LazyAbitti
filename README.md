@@ -8,6 +8,6 @@ You can make this boot automatically on pc startup
 > Press win+r and type shell:startup
 > Move shortcut to the folder that just opened
 
--This is just my small project, and doesn't have anything to do with abitti developers
+-This is just my small project, and doesn't have anything to do with abitti developers.
 I might add more features later
 
